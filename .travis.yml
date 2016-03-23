@@ -1,3 +1,5 @@
+addons:
+    artifacts: true
 language: java
 
 install: ./gradlew setupCIWorkspace --refresh-dependencies
