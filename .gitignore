@@ -18,7 +18,7 @@
 *.iso
 *.jar
 # Include gradle wrapper
-!/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.jar
 *.rar
 *.tar
 *.zip
