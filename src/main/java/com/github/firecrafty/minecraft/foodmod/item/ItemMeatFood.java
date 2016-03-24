@@ -19,7 +19,6 @@
  */
 package com.github.firecrafty.minecraft.foodmod.item;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemFood;
 
 /**

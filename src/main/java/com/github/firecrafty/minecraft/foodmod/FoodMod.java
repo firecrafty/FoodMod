@@ -24,8 +24,6 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 
-import cpw.mods.fml.common.SidedProxy;
-
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -54,11 +52,11 @@ public class FoodMod {
     
     @EventHandler
     public void load(FMLInitializationEvent event) {
-        
+        //Placeholder for initialization events
     }
     
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        
+        //Placeholder for post initialization events
     }
 }
