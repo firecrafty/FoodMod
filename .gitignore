@@ -48,6 +48,7 @@ Thumbs.db
 .nb-gradle-properties
 /.gradle/
 /eclipse/
+licenseheader.txt
 
 # Other Stuff #
 ###############

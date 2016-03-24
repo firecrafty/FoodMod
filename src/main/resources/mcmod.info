@@ -1,16 +1,17 @@
 [
-{
-  "modid": "FoodMod",
-  "name": "Food Mod",
-  "description": "My food mod",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
-  "authorList": ["firecrafty_"],
-  "credits": "",
-  "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
-}
+    {
+        "modid": "foodmod",
+        "name": "Food Mod",
+        "description": "My food mod",
+        "version": "${version}",
+        "mcversion": "${mcversion}",
+        "url": "",
+        "updateUrl": "",
+        "authorList": ["firecrafty_"],
+        "credits": "",
+        "logoFile": "",
+        "requiredMods":[
+            "Forge"
+        ]
+    }
 ]
