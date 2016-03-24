@@ -34,11 +34,8 @@ import net.minecraft.creativetab.CreativeTabs;
 public class FoodMod {
     //Overrides mcmod.info
     public static final String MODID = "foodmod";
-    public static final String VERSION = "0.1.0-SNAPSHOT";
+    public static final String VERSION = "0.1.0-beta1";
     public static final String MODNAME = "Food Mod";
-    public static final String DESC = "More foods for minecraft!";
-    public static final String SRC_URL = "https://github.com/firecrafty/FoodMod";
-    public static final String[] AUTHORS = { "firecrafty" };
     
     // Initialize item fields
     public static ItemMeatFood uncookedSpam;
