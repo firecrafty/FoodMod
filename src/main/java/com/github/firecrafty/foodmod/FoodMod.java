@@ -1,6 +1,6 @@
 /*
  * File name: FoodMod.java
- * com.github.firecrafty.minecraft.foodmod.FoodMod
+ * com.github.firecrafty.foodmod.FoodMod
  *
  * Copyright (C) 2016 firecrafty
  *
@@ -17,43 +17,52 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.github.firecrafty.minecraft.foodmod;
+package com.github.firecrafty.foodmod;
 
-import com.github.firecrafty.minecraft.foodmod.item.ItemMeatFood;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 
+import cpw.mods.fml.common.SidedProxy;
+
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.creativetab.CreativeTabs;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-@Mod(modid=FoodMod.MODID, name=FoodMod.MODNAME, version=FoodMod.VERSION) //Initiate the mod
-public class FoodMod {
-    //Overrides mcmod.info
-    public static final String MODID = "foodmod";
-    public static final String VERSION = "0.1.0-alpha.1";
-    public static final String MODNAME = "Food Mod";
+/**
+ * 
+ * @author firecrafty
+ */
+@Mod(modid=Reference.MOD_ID, name=Reference.MOD_NAME, version=Reference.MOD_VERSION) //Initiate the mod
+public class FoodMod
+{
     
-    // Initialize item fields
-    public static ItemMeatFood uncookedSpam;
-    @Instance(value = FoodMod.MODID)
+    public static final Logger LOG = LogManager.getLogger(Reference.MOD_NAME);
+    //Instance init
+    @Instance(value = Reference.MOD_ID)
     public static FoodMod instance;
-    
+    //Proxies
+    @SidedProxy(clientSide=Reference.CLIENT_PROXY_CLASS, serverSide=Reference.SERVER_PROXY_CLASS)
+    public static CommonProxy proxy;
+    //Start events
     @EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
-        GameRegistry.registerItem(uncookedSpam = (ItemMeatFood) new ItemMeatFood("uncookedSpam", 1, 0.2f, true).setMaxStackSize(64).setCreativeTab(CreativeTabs.tabMisc), "uncooked_spam");
+    public void preInit(FMLPreInitializationEvent event)
+    {
+        ItemSetup.setup();
     }
     
     @EventHandler
-    public void load(FMLInitializationEvent event) {
+    public void load(FMLInitializationEvent event)
+    {
         //Placeholder for initialization events
     }
     
     @EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
+    public void postInit(FMLPostInitializationEvent event)
+    {
         //Placeholder for post initialization events
     }
+    //End Events
 }

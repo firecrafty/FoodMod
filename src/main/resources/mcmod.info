@@ -1,17 +1,21 @@
-[
-    {
-        "modid": "foodmod",
-        "name": "Food Mod",
-        "description": "More foods in Minecraft!",
-        "version": "${version}",
-        "mcversion": "${mcversion}",
-        "url": "https://github.com/firecrafty/FoodMod",
-        "updateUrl": "https://github.com/firecrafty/FoodMod/releases",
-        "authorList": ["firecrafty_"],
-        "credits": "",
-        "logoFile": "",
-        "requiredMods":[
-            "Forge"
-        ]
-    }
-]
+{
+  "modListVersion": 2,
+  "modList": [{
+    "modid": "foodmod",
+    "name": "Food Mod",
+    "description": "More foods in Minecraft!",
+    "version": "${mod_version}",
+    "mcversion": "${minecraft_version}",
+    "url" : "https://github.com/firecrafty/FoodMod",
+    "updateUrl": "https://github.com/firecrafty/FoodMod/releases",
+    "authorList": [ "firecrafty_" ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [  ],
+    "parent": "",
+    "requiredMods": [  ],
+    "dependencies": ["Forge@[10.13.4.1558,)"],
+    "dependants": [  ],
+    "useDependencyInformation": "true"
+  }]
+}

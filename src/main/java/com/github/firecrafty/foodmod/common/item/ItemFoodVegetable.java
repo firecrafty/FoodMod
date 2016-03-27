@@ -1,6 +1,6 @@
 /*
- * File name: ItemUncookedSpam.java
- * com.github.firecrafty.minecraft.foodmod.item.ItemUncookedSpam
+ * File name: ItemFoodVegetable.java
+ * com.github.firecrafty.foodmod.common.item.ItemFoodVegetable
  *
  * Copyright (C) 2016 firecrafty
  *
@@ -17,18 +17,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.github.firecrafty.minecraft.foodmod.item;
+package com.github.firecrafty.foodmod.common.item;
 
 import net.minecraft.item.ItemFood;
 
 /**
  *
- * @author ryanblue
+ * @author firecrafty
  */
-public class ItemMeatFood extends ItemFood{
-    public ItemMeatFood(String unlocalizedName, int amount, float saturation, boolean isWolfFood) {
-        super(amount, saturation, isWolfFood);
-        this.setUnlocalizedName(unlocalizedName);
-        
+public class ItemFoodVegetable extends ItemFood{
+    public ItemFoodVegetable(int amount, boolean isWolfFood) {
+        super(amount, isWolfFood);
     }
 }
