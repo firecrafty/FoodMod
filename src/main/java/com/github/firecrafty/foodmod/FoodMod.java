@@ -32,36 +32,33 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * 
+ *
  * @author firecrafty
  */
-@Mod(modid=Reference.MOD_ID, name=Reference.MOD_NAME, version=Reference.MOD_VERSION) //Initiate the mod
-public class FoodMod
-{
-    
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION) //Initiate the mod
+public class FoodMod {
+
     public static final Logger LOG = LogManager.getLogger(Reference.MOD_NAME);
     //Instance init
     @Instance(value = Reference.MOD_ID)
     public static FoodMod instance;
     //Proxies
-    @SidedProxy(clientSide=Reference.CLIENT_PROXY_CLASS, serverSide=Reference.SERVER_PROXY_CLASS)
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
+
     //Start events
     @EventHandler
-    public void preInit(FMLPreInitializationEvent event)
-    {
+    public void preInit(FMLPreInitializationEvent event) {
+        ItemSetup.preSetup();
+    }
+
+    @EventHandler
+    public void load(FMLInitializationEvent event) {
         ItemSetup.setup();
     }
-    
+
     @EventHandler
-    public void load(FMLInitializationEvent event)
-    {
-        //Placeholder for initialization events
-    }
-    
-    @EventHandler
-    public void postInit(FMLPostInitializationEvent event)
-    {
+    public void postInit(FMLPostInitializationEvent event) {
         //Placeholder for post initialization events
     }
     //End Events

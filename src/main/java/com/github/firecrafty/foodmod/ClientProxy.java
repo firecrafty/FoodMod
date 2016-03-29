@@ -23,7 +23,6 @@ package com.github.firecrafty.foodmod;
  *
  * @author firecrafty
  */
-public class ClientProxy extends CommonProxy
-{
-    
+public class ClientProxy extends CommonProxy {
+
 }

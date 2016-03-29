@@ -1,6 +1,6 @@
 /*
- * File name: ItemFoodVegetable.java
- * com.github.firecrafty.foodmod.common.item.ItemFoodVegetable
+ * File name: ItemFoodMeat.java
+ * com.github.firecrafty.foodmod.common.food.ItemFoodMeat
  *
  * Copyright (C) 2016 firecrafty
  *
@@ -17,16 +17,21 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.github.firecrafty.foodmod.common.item;
+package com.github.firecrafty.foodmod.common.food;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemFood;
 
 /**
  *
  * @author firecrafty
  */
-public class ItemFoodVegetable extends ItemFood{
-    public ItemFoodVegetable(int amount, boolean isWolfFood) {
+public class ItemFoodMeat extends ItemFood {
+
+    public ItemFoodMeat(int amount, boolean isWolfFood) {
         super(amount, isWolfFood);
+        setMaxStackSize(64);
+        setCreativeTab(CreativeTabs.tabMisc);
+
     }
 }

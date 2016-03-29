@@ -1,6 +1,6 @@
 /*
- * File name: FoodModTabs.java
- * com.github.firecrafty.foodmod.FoodModTabs
+ * File name: BlockCropTomato.java
+ * com.github.firecrafty.foodmod.blocks.plants.BlockCropTomato
  *
  * Copyright (C) 2016 firecrafty
  *
@@ -17,27 +17,30 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.github.firecrafty.foodmod;
+package com.github.firecrafty.foodmod.blocks.plants;
 
 import com.github.firecrafty.foodmod.core.FMItems;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.creativetab.CreativeTabs;
+import java.util.Random;
 import net.minecraft.item.Item;
 
 /**
  *
  * @author firecrafty
  */
-public final class FoodModTabs extends CreativeTabs {
-
-    public FoodModTabs(int par1, String par2str) {
-        super(par1, par2str);
+public class BlockCropTomato extends FMBlockCrops{
+    public BlockCropTomato() {
+        //basic block setup
+        setBlockName("tomatoCrop");
+        setBlockTextureName("foodmod:tomatoCrop_stage_0");
     }
-
-    @SideOnly(Side.CLIENT)
-    public Item getTabIconItem() {
-        return FMItems.foodModTabItem;
+    
+    @Override
+    public int quantityDropped(int parMetadata, int parFortune, Random parRand) {
+        return (parMetadata/2);
     }
-
+    @Override
+    public Item getItemDropped(int parMetadata, Random parRand, int parFortune) {
+        System.out.println("BlockCropTomato getItemDropped();");
+        return FMItems.tomatoFruit;
+    }
 }

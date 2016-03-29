@@ -23,7 +23,6 @@ package com.github.firecrafty.foodmod;
  *
  * @author firecrafty
  */
-public class CommonProxy
-{
-    
+public class CommonProxy {
+
 }

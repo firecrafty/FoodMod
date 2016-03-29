@@ -23,16 +23,16 @@ package com.github.firecrafty.foodmod;
  *
  * @author firecrafty
  */
-public class Reference
-{
+public class Reference {
+
     public static final String MOD_ID = "foodmod";
     public static final String MOD_NAME = "Food Mod";
-    
+
     public static final int VERSION_MAJOR = 0;
     public static final int VERSION_MINOR = 1;
     public static final String VERSION_REVISION = "0-alpha.1";
-    
-    public static final String MOD_VERSION = VERSION_MAJOR+"."+VERSION_MINOR+"."+VERSION_REVISION;
+
+    public static final String MOD_VERSION = VERSION_MAJOR + "." + VERSION_MINOR + "." + VERSION_REVISION;
     public static final String SERVER_PROXY_CLASS = "com.github.firecrafty.foodmod.CommonProxy";
     public static final String CLIENT_PROXY_CLASS = "com.github.firecrafty.foodmod.ClientProxy";
     public static final String ASSET_PATH = "/assets/" + MOD_ID + "/";

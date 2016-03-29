@@ -19,25 +19,32 @@
  */
 package com.github.firecrafty.foodmod;
 
-import com.github.firecrafty.foodmod.common.item.ItemFoodMeat;
+import com.github.firecrafty.foodmod.core.FMItems;
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 
 /**
  *
  * @author firecrafty
  */
-public class ItemSetup extends FMItems
-{
-    public static void setup()
-    {   
-        
-        FoodMod.LOG.info(new StringBuilder().append("Loading Items...").toString());
-        
-        uncookedSpam = (ItemFoodMeat) new ItemFoodMeat(2, true).setUnlocalizedName("uncookedSpam").setTextureName("foodmod:uncookedSpam").setCreativeTab(foodModTab);
-        cookedSpam = (ItemFoodMeat) new ItemFoodMeat(4, true).setUnlocalizedName("cookedSpam").setTextureName("foodmod:cookedSpam").setCreativeTab(foodModTab);
-        
+public class ItemSetup extends FMItems {
+
+    public static void preSetup() {
+        FoodMod.LOG.info(new StringBuilder().append("Loading components..."));
+        initItems();
         registerItems();
-        registerRecipes();
         
-        FoodMod.LOG.info(new StringBuilder().append("Finished Loading Items").toString());
+        FoodMod.LOG.info(new StringBuilder().append("Finished loading components").toString());
+    }
+    public static void setup() {
+        
+        
+        FoodMod.LOG.info(new StringBuilder().append("Registering Recipes...").toString());
+
+        GameRegistry.addRecipe(new ItemStack(FMItems.uncookedSpam, 9), "ABC", "CAB", "BCA", 'A', new ItemStack(Items.beef), 'B', new ItemStack(Items.porkchop), 'C', new ItemStack(Items.chicken));
+        GameRegistry.addSmelting(FMItems.uncookedSpam, new ItemStack(FMItems.cookedSpam), 0f);
+
+        FoodMod.LOG.info(new StringBuilder().append("Finished Registering Recipes").toString());
     }
 }
